@@ -2,6 +2,9 @@ import os
 import time
 import sys
 
+from playsound import playsound
+
+
 
 def main():
     os.system('clear')
@@ -14,7 +17,12 @@ def main():
             access_denied()
     fake_norad()
     single_print('GREETINGS PROFESSOR FALKEN.',0.1)
+    time.sleep(3)
+    single_print('SHALL WE PLAY A GAME?',0.1)
     print('')
+    print('')
+    playsound('Shall-we-play-a-game.mp3')
+    
     
 
 
