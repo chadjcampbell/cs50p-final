@@ -10,6 +10,8 @@ def main():
         username = input()
         if username.lower().strip() == 'joshua':
             break
+        else:
+            access_denied()
     fake_norad()
     single_print('GREETINGS PROFESSOR FALKEN.',0.1)
     print('')
@@ -31,8 +33,18 @@ def fake_norad():
     single_print('▒▒▒▒9vcT85▒▒▒  ▒03h7Y1▒▒▒ ▒▒▒▒▒▒▒ ▒▒▒▒▒▒KtIO1h▒▒▒ 867-5309 ▒▒▒▒▒ ▒▒▒▒▒▒aBy4c▒▒▒▒ ▒▒▒▒▒▒▒▒',0.02)
     os.system('clear')
 
-def function_n():
-    ...
+def access_denied():
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('           ** IDENTIFICATION NOT RECOGNIZED **')
+    print('                   ** ACCESS DENIED **')
+    time.sleep(3)
+    os.system('clear')
+    
+    
 
 
 if __name__ == "__main__":
