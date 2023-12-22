@@ -79,7 +79,6 @@ def pick_game():
         elif game == 'Rock, Paper, Scissors':
             os.system('clear')
             rock_paper_scissors()
-            time.sleep(3)
             os.system('clear')
             pick_game()
     global_thermonuclear_war()

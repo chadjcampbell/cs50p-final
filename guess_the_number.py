@@ -2,11 +2,11 @@ import random
 from colorist import green
 
 def guess_the_number():
-    print("Welcome to Guess the Number!")
-    print("I'm thinking of a number between 1 and 100.")
+    print("\nWelcome to Guess the Number!\n")
+    print("I'm thinking of a number between 1 and 100.\n")
 
     # Generate a random number between 1 and 100
-    secret_number = random.randint(1, 1)
+    secret_number = random.randint(1, 100)
     attempts = 0
 
     while True:
