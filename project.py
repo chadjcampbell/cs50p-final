@@ -12,17 +12,17 @@ def main():
         single_print('LOGON: ', 0.1)
         username = input()
         if username.lower().strip() == 'joshua':
+            os.system('clear')
             break
         else:
             access_denied()
     fake_norad()
     single_print('GREETINGS PROFESSOR FALKEN.',0.1)
     time.sleep(3)
+    print('\n'*2)
+    playsound('Shall-we-play-a-game.mp3', block=False)
     single_print('SHALL WE PLAY A GAME?',0.1)
     print('')
-    print('')
-    playsound('Shall-we-play-a-game.mp3')
-    
     
 
 
@@ -42,11 +42,7 @@ def fake_norad():
     os.system('clear')
 
 def access_denied():
-    print('')
-    print('')
-    print('')
-    print('')
-    print('')
+    print('\n'*5)
     print('           ** IDENTIFICATION NOT RECOGNIZED **')
     print('                   ** ACCESS DENIED **')
     time.sleep(3)
