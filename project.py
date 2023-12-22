@@ -3,10 +3,11 @@ import time
 import sys
 
 from playsound import playsound
+from simple_term_menu import TerminalMenu
+
 from global_thermonuclear_war import global_thermonuclear_war
 from guess_the_number import guess_the_number
 from rock_paper_scissors import rock_paper_scissors
-from simple_term_menu import TerminalMenu
 from tic_tac_toe import tic_tac_toe
 
 
@@ -23,19 +24,8 @@ def main():
         fake_norad()
         single_print('GREETINGS PROFESSOR FALKEN.',0.1)
         time.sleep(3)
-        print('\n'*2)
-        playsound('Shall-we-play-a-game.mp3', block=False)
-        single_print('SHALL WE PLAY A GAME?',0.1) """
-    print('')
-    game = pick_game()
-    if game == 'Guess the Number':
-        guess_the_number()
-    elif game == 'Tic-Tac-Toe':
-        tic_tac_toe()
-    elif game == 'Rock, Paper, Scissors':
-        rock_paper_scissors()
-    else:
-        global_thermonuclear_war()
+        print('\n'*2) """
+    pick_game()
 
 
 
@@ -62,10 +52,38 @@ def access_denied():
     os.system('clear')
 
 def pick_game():
-    options = ["Guess the Number", "Tic-Tac-Toe", "Rock, Paper, Scissors", "Global Thermonuclear War"]
+    playsound('Shall-we-play-a-game.mp3', block=False)
+    single_print('SHALL WE PLAY A GAME?',0.1)
+    print('\n'*2)
+    print('  Move with Up/Down, Enter to Select\n')
+    options = ["Guess the Number", "Tic-Tac-Toe", "Rock, Paper, Scissors", "Global Thermonuclear War", "Exit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
-    return options[menu_entry_index]
+    game = options[menu_entry_index]
+    if game == 'Exit':
+        os.system('clear')
+        sys.exit()
+    while game is not "Global Thermonuclear War":
+        if game == 'Guess the Number':
+            os.system('clear')
+            guess_the_number()
+            time.sleep(3)
+            os.system('clear')
+            pick_game()
+        elif game == 'Tic-Tac-Toe':
+            os.system('clear')
+            tic_tac_toe()
+            time.sleep(3)
+            os.system('clear')
+            pick_game()
+        elif game == 'Rock, Paper, Scissors':
+            os.system('clear')
+            rock_paper_scissors()
+            time.sleep(3)
+            os.system('clear')
+            pick_game()
+    global_thermonuclear_war()
+
     
     
 
