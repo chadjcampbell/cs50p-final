@@ -4,6 +4,7 @@ import sys
 
 from playsound import playsound
 from simple_term_menu import TerminalMenu
+from colorist import blue
 
 from global_thermonuclear_war import global_thermonuclear_war
 from guess_the_number import guess_the_number
@@ -63,24 +64,31 @@ def pick_game():
     if game == 'Exit':
         os.system('clear')
         sys.exit()
-    while game is not "Global Thermonuclear War":
+    while game != "Global Thermonuclear War":
         if game == 'Guess the Number':
             os.system('clear')
             guess_the_number()
             time.sleep(3)
             os.system('clear')
             pick_game()
+            return
         elif game == 'Tic-Tac-Toe':
             os.system('clear')
             tic_tac_toe()
             time.sleep(3)
             os.system('clear')
             pick_game()
+            return
         elif game == 'Rock, Paper, Scissors':
             os.system('clear')
             rock_paper_scissors()
             os.system('clear')
             pick_game()
+            return
+        else:
+            os.system('clear')
+            blue('**  NORAD SYSTEM ERROR  **')
+            sys.exit()
     global_thermonuclear_war()
 
     
