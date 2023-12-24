@@ -4,7 +4,7 @@ import sys
 
 from playsound import playsound
 from simple_term_menu import TerminalMenu
-from colorist import blue
+from colorist import blue, Color
 
 from global_thermonuclear_war import global_thermonuclear_war
 from guess_the_number import guess_the_number
@@ -29,7 +29,6 @@ def main():
     pick_game()
 
 
-
 def single_print(string, speed):
     for char in string:
         sys.stdout.write(char + '\a')
@@ -38,12 +37,15 @@ def single_print(string, speed):
 
 
 def fake_norad():
-    single_print('jmnsZJrExk6f8xSaRCbuQl9vcT85K5YQs2rCYIRN0194KtIO1hXEMqcWtPwpSbPq',0.02)
+    single_print(
+        'jmnsZJrExk6f8xSaRCbuQl9vcT85K5YQs2rCYIRN0194KtIO1hXEMqcWtPwpSbPq', 0.02)
     os.system('clear')
-    single_print('wSRq1wztrXkoslH03h7Y139KVib4VRMHRmoEywKbi23JqOUmR5cXRz5n28HoAvdIIGtWxbs4BaBy4cWwWKUxCjtdKACxg11lZlP8iYe4QxKIgl18fzUz6jiVlNJLDvIgZCA2EG8rUqcWdpi82',0.01)
+    single_print('wSRq1wztrXkoslH03h7Y139KVib4VRMHRmoEywKbi23JqOUmR5cXRz5n28HoAvdIIGtWxbs4BaBy4cWwWKUxCjtdKACxg11lZlP8iYe4QxKIgl18fzUz6jiVlNJLDvIgZCA2EG8rUqcWdpi82', 0.01)
     os.system('clear')
-    single_print('▒▒▒▒9vcT85▒▒▒  ▒03h7Y1▒▒▒ ▒▒▒▒▒▒▒ ▒▒▒▒▒▒KtIO1h▒▒▒ 867-5309 ▒▒▒▒▒ ▒▒▒▒▒▒aBy4c▒▒▒▒ ▒▒▒▒▒▒▒▒',0.02)
+    single_print(
+        '▒▒▒▒9vcT85▒▒▒  ▒03h7Y1▒▒▒ ▒▒▒▒▒▒▒ ▒▒▒▒▒▒KtIO1h▒▒▒ 867-5309 ▒▒▒▒▒ ▒▒▒▒▒▒aBy4c▒▒▒▒ ▒▒▒▒▒▒▒▒', 0.02)
     os.system('clear')
+
 
 def access_denied():
     print('\n'*5)
@@ -52,12 +54,15 @@ def access_denied():
     time.sleep(2)
     os.system('clear')
 
+
 def pick_game():
     playsound('Shall-we-play-a-game.mp3', block=False)
-    single_print('SHALL WE PLAY A GAME?',0.1)
+    single_print('SHALL WE PLAY A GAME?', 0.1)
     print('\n'*2)
     print('  Move with Up/Down, Enter to Select\n')
-    options = ["Guess the Number", "Tic-Tac-Toe", "Rock, Paper, Scissors", "Global Thermonuclear War", "Exit"]
+    war = f"{Color.RED}Global Thermonuclear War{Color.OFF}"
+    options = ["Guess the Number", "Tic-Tac-Toe",
+               "Rock, Paper, Scissors", war, "Exit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
     game = options[menu_entry_index]
@@ -90,9 +95,6 @@ def pick_game():
             blue('**  NORAD SYSTEM ERROR  **')
             sys.exit()
     global_thermonuclear_war()
-
-    
-    
 
 
 if __name__ == "__main__":
