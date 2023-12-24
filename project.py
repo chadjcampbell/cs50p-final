@@ -60,9 +60,8 @@ def pick_game():
     single_print('SHALL WE PLAY A GAME?', 0.1)
     print('\n'*2)
     print('  Move with Up/Down, Enter to Select\n')
-    war = f"{Color.RED}Global Thermonuclear War{Color.OFF}"
     options = ["Guess the Number", "Tic-Tac-Toe",
-               "Rock, Paper, Scissors", war, "Exit"]
+               "Rock, Paper, Scissors", "Global Thermonuclear War", "Exit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
     game = options[menu_entry_index]
