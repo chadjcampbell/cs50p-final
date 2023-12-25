@@ -1,33 +1,24 @@
+import os
+
+from simple_term_menu import TerminalMenu
+from war_maps import starter_map, select_usa
+
+
 def global_thermonuclear_war():
-    # ASCII Map of USA
-    usa_map = """
-    _____
-    /     \\
-    |       |
-    |   *   |      ________
-    |       |     |        |
-    \\_____/      |        |
-        \\ |  |     |        |
-        / |  |     |________|
-    |  |  |    /    /|\\
-    |__|__|   /____/__|\\
-    """
+    # main game
+    os.system('clear')
+    print(starter_map)
+    country = select_country()
+    if country == 'USA':
+        os.system('clear')
+        print(select_usa)
 
-    # ASCII Map of Russia
-    russia_map = """
-    ______
-    /      \\
-    |        |
-    |   *    |    ____
-    |        |   |    |
-    \\______/    |____|
-    |   |   / /
-    |___|  /_/
-    """
 
-    # Print the maps to the terminal
-    print("Map of USA:")
-    print(usa_map)
-
-    print("\nMap of Russia:")
-    print(russia_map)
+# helper functions
+def select_country():
+    print('SELECT YOUR COUNTRY')
+    print('  Move with Up/Down, Enter to Select\n')
+    options = ["USA", "Russia"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    return options[menu_entry_index]

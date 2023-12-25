@@ -25,8 +25,9 @@ def main():
         fake_norad()
         single_print('GREETINGS PROFESSOR FALKEN.',0.1)
         time.sleep(3)
-        print('\n'*2) """
-    pick_game()
+        print('\n'*2)
+        pick_game() """
+    global_thermonuclear_war()
 
 
 def single_print(string, speed):
