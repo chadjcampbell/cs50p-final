@@ -14,20 +14,20 @@ from tic_tac_toe import tic_tac_toe
 
 def main():
     os.system('clear')
-    """ while True:
-            single_print('LOGON: ', 0.1)
-            username = input()
-            if username.lower().strip() == 'joshua':
-                os.system('clear')
-                break
-            else:
-                access_denied()
-        fake_norad()
-        single_print('GREETINGS PROFESSOR FALKEN.',0.1)
-        time.sleep(3)
-        print('\n'*2)
-        pick_game() """
-    global_thermonuclear_war()
+    while True:
+        single_print('LOGON: ', 0.1)
+        username = input()
+        if username.lower().strip() == 'joshua':
+            os.system('clear')
+            break
+        else:
+            access_denied()
+    fake_norad()
+    single_print('GREETINGS PROFESSOR FALKEN.', 0.1)
+    time.sleep(3)
+    print('\n'*2)
+    pick_game()
+    game_over()
 
 
 def single_print(string, speed):
@@ -95,6 +95,20 @@ def pick_game():
             blue('**  NORAD SYSTEM ERROR  **')
             sys.exit()
     global_thermonuclear_war()
+
+
+def game_over():
+    os.system('clear')
+    single_print('A STRANGE GAME.', 0.1)
+    print('')
+    single_print('THE ONLY WINNING MOVE', 0.1)
+    print('')
+    single_print('IS NOT TO PLAY.', 0.1)
+    print('\n')
+    time.sleep(2)
+    single_print('HOW ABOUT A NICE GAME OF CHESS?', 0.1)
+    time.sleep(2)
+    os.system('clear')
 
 
 if __name__ == "__main__":

@@ -23,13 +23,13 @@ def global_thermonuclear_war():
             usa_cities.remove(target)
             retaliate = random.choice(russia_cities)
             russia_cities.remove(retaliate)
-            print(f"RUSSIA HAS DETROYED {retaliate}")
+            print(f"USA HAS DETROYED {retaliate}\n")
         else:
             print(f"{target} HAS BEEN DESTOYED")
             russia_cities.remove(target)
             retaliate = random.choice(usa_cities)
-            russia_cities.remove(retaliate)
-            print(f"USA HAS DETROYED {retaliate}")
+            usa_cities.remove(retaliate)
+            print(f"RUSSIA HAS DETROYED {retaliate}\n")
 
 
 # helper functions
