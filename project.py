@@ -4,7 +4,7 @@ import sys
 
 from playsound import playsound
 from simple_term_menu import TerminalMenu
-from colorist import blue, Color
+from colorist import blue
 
 from global_thermonuclear_war import global_thermonuclear_war
 from guess_the_number import guess_the_number
