@@ -2,6 +2,7 @@ import os
 
 from simple_term_menu import TerminalMenu
 from war_maps import starter_map, select_usa, select_russia
+import random
 
 
 def global_thermonuclear_war():
@@ -15,7 +16,20 @@ def global_thermonuclear_war():
     if country == 'Russia':
         os.system('clear')
         print(select_russia)
-    select_target(country)
+    while len(usa_cities) and len(russia_cities):
+        target = select_target(country)
+        if target in usa_cities:
+            print(f"{target} HAS BEEN DESTOYED")
+            usa_cities.remove(target)
+            retaliate = random.choice(russia_cities)
+            russia_cities.remove(retaliate)
+            print(f"RUSSIA HAS DETROYED {retaliate}")
+        else:
+            print(f"{target} HAS BEEN DESTOYED")
+            russia_cities.remove(target)
+            retaliate = random.choice(usa_cities)
+            russia_cities.remove(retaliate)
+            print(f"USA HAS DETROYED {retaliate}")
 
 
 # helper functions
