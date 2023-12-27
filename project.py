@@ -30,11 +30,15 @@ def main():
     game_over()
 
 
-def single_print(string, speed):
+def single_print(string, speed, output_stream=sys.stdout):
+    printed_content = ""
     for char in string:
-        sys.stdout.write(char + '\a')
-        sys.stdout.flush()
+        output_stream.write(char + '\a')
+        output_stream.flush()
+        printed_content += char
         time.sleep(speed)
+
+    return printed_content
 
 
 def fake_norad():
